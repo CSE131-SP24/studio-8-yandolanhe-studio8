@@ -27,6 +27,12 @@ public class Quiz {
 	
 	public void takeQuiz() {
 		//FIXME
+		int sum = 0;
+		for(Question q: questions) {
+			q.displayPrompt();
+			sum+=q.checkAnswer(getUserAnswer());
+		}
+		System.out.println("Your grade on this quiz is: " + sum + "/" + getTotalPoints());
 	}
 	
 	public static void main(String[] args) {
